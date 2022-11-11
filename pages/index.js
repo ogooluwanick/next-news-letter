@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import ArticleList from '../components/ArticleList'
+import {server} from "../config/index"
 
 export default function Home({articles}) {
        
@@ -18,7 +19,7 @@ export default function Home({articles}) {
 }
 
 export const getStaticProps= async ()=>{                                    //From local API 
-        const res = await fetch(`/api/articles`)
+        const res = await fetch(`${server}/api/articles`)
         const articles = await res.json()
         
         return { props: {articles} }
