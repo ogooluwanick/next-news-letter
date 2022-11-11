@@ -7,6 +7,7 @@ export default function Home({articles}) {
   return (
     <div>
         <Head>
+                <link rel="icon" href="logoIcon.png" />
                 <title>🌹O.G.O🌹 News Letters</title>
                 <meta name='keywords' content='News, Web Dev, Next js, Ogooluwanick' />
                 <meta name='description' content="Ogooluwanick's Next js News letters"/>
