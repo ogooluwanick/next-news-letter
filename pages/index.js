@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import ArticleList from '../components/ArticleList'
 
 export default function Home({articles}) {
        
@@ -9,6 +10,8 @@ export default function Home({articles}) {
                 <meta name='keywords' content='News, Web Dev, Next js, Ogooluwanick' />
                 <meta name='description' content="Ogooluwanick's Next js News letters"/>
         </Head>
+
+        <ArticleList articles={articles}/>
         
     </div>
   )
