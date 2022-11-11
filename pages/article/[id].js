@@ -36,8 +36,6 @@ export const getStaticPaths= async ()=>{
         const ids = articles.map((article) => article.id)
         const paths = ids.map((id) => ({ params: { id: String(id) } }))
 
-        console.log(paths)
-
         return { paths, fallback: false}
 }
 export default index
