@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import navStyles from "../styles/Nav.module.css"
@@ -5,7 +6,7 @@ import navStyles from "../styles/Nav.module.css"
 const Nav = () => {
   return (
     <nav className={navStyles.nav}>
-        <Link href={"/"}> <img src="logoICon.png" alt="logo" width={"60px"} /></Link>
+        <Link href={"/"}> <Image src="logoICon.png" alt="logo" width={"60px"} /></Link>
        
         <ul>
                 <li>
