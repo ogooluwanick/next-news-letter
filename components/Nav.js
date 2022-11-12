@@ -6,7 +6,7 @@ import navStyles from "../styles/Nav.module.css"
 const Nav = () => {
   return (
     <nav className={navStyles.nav}>
-        <Link href={"/"}> <Image src="logoICon.png" alt="logo" width={"60px"} /></Link>
+        <Link href={"/"}> <Image src="/logoICon.png" alt="logo" width={55}  height={50}/></Link>
        
         <ul>
                 <li>
