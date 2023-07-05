@@ -21,9 +21,8 @@ const index = ({article:tempArticle}) => {
 export const getStaticProps= async (context)=>{
         const res = await fetch(`${server}/api/articles/${context.params.id}`)
         const articleResponse = await res.json();
-        const article = JSON.stringify(articleResponse);
         
-        return { props: {article} }
+        return { props: {article : articleResponse ? JSON.stringify(articleResponse) : null} }
 }
 
 export const getStaticPaths= async ()=>{

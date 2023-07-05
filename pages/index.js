@@ -14,7 +14,6 @@ export default function Home({articles:tempArticles}) {
 export const getStaticProps= async ()=>{                                    //From local API 
         const res = await fetch(`${server}/api/articles`);
         const articlesResponse = await res.json();
-        const articles = JSON.stringify(articlesResponse);
         
-        return { props: {articles } }
+        return { props: {articles: articlesResponse.length > 0 ? JSON.stringify(articlesResponse) : [] } }
 }
