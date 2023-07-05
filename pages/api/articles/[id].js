@@ -1,4 +1,4 @@
-import {articles} from "../../../public/data.js"
+import {articles} from "../../../public/data"
 
 
 export default function  handler(req,res) {

@@ -4,9 +4,9 @@ import React from 'react'
 import articleIdStyle from "../../styles/ArticleID.module.css"
 import { server } from "../../config"
 
-const index = ({article}) => {
-        // let route=useRouter()
-        // let id=route.query.id
+const index = ({article:tempArticle}) => {
+        let article = JSON.parse(tempArticle)
+
   return (
     <div className={articleIdStyle.card}>
         <h1>{article.title}</h1>
@@ -17,17 +17,11 @@ const index = ({article}) => {
   )
 }
 
-// export const getServerSideProps= async (context)=>{
-//         const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`)
-//         const article = await res.json()
-        
-//         return { props: {article} }
-// }
+
 export const getStaticProps= async (context)=>{
         const res = await fetch(`${server}/api/articles/${context.params.id}`)
-        // const res = await fetch(`${server}/api/articles`)
-        console.log(res)
-        const article = await res.json()
+        const articleResponse = await res.json();
+        const article = JSON.stringify(articleResponse);
         
         return { props: {article} }
 }

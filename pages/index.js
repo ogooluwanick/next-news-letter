@@ -1,7 +1,8 @@
 import ArticleList from '../components/ArticleList'
 import {server} from "../config/index"
 
-export default function Home({articles}) {
+export default function Home({articles:tempArticles}) {
+        let articles = JSON.parse(tempArticles)
        
   return (
     <div>
@@ -11,16 +12,9 @@ export default function Home({articles}) {
 }
 
 export const getStaticProps= async ()=>{                                    //From local API 
-        const res = await fetch(`${server}/api/articles`)
-        const articles = await res.json()
+        const res = await fetch(`${server}/api/articles`);
+        const articlesResponse = await res.json();
+        const articles = JSON.stringify(articlesResponse);
         
-        return { props: {articles} }
+        return { props: {articles } }
 }
-
-
-// export const getStaticProps= async ()=>{                             //From outside 
-//         const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
-//         const articles = await res.json()
-        
-//         return { props: {articles} }
-// }
